@@ -728,7 +728,7 @@ blockquote p {
     display: block;
     width: auto;
     height: auto;
-    text-align: center;
+    text-align: left;
   }
   .author-avatar img {
     padding: 5px;
