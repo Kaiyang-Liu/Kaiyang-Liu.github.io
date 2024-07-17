@@ -62,7 +62,22 @@ date_sub(b_day,a_day) as day_diff from ( select distinct a.uid,
 a.actve_day as a_day, b.active_day as b_day from active_log as a left
 join active_log as b on a.uid = b.uid ) ) d group by d.a_day</p>
 <p>第 1 步：自连接进行日期连接 第 2 步：计算时间间隔 第 3
-步：计算次日、7 日留存数 ***</p>
+步：计算次日、7 日留存数</p>
+<p><strong>2021年11月每天新用户的次日留存率</strong> select
+t1.dt,round(count(t2.uid)/count(t1.uid),2) uv_rate from (select uid
+,min(date(in_time)) dt from tb_user_log group by uid) as t1 --
+每天新用户表 left join (select uid , date(in_time) dt from tb_user_log
+union select uid , date(out_time) from tb_user_log) as t2 -- 用户活跃表
+on t1.uid=t2.uid and t1.dt=date_sub(t2.dt,INTERVAL 1 day) where
+date_format(t1.dt, '%Y-%m') = '2021-11' group by t1.dt order by
+t1.dt</p>
+<p><strong>计算累计指标 (统计出每个商品截至每个月的累积销量)</strong>
+select product_id,sale_month,month_quantity, sum(month_quantity)
+over(partition by product_id order by sale_month) as month_all from(
+select product_id, date_format(sale_date,'%Y-%m') as sale_month,
+sum(quantity) as month_quantity from sale_info group by product_id ) as
+a</p>
+<hr>
 <h2 id="data-anlayst-quick-check">3 Data Anlayst Quick Check</h2>
 <p><strong>中心极限定理</strong>：
 有一个总体数据，如果从该总体数据中随机抽取若干样本，重复多次，每次抽样得到的样本量统计值(比如均值)约等于与总体的统计值(比如均值)
