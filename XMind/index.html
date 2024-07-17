@@ -115,16 +115,46 @@ distribution）。这种方法允许在估计参数时，同时考虑数据和�
 优点：实验所需样本量更少，不用提前预估样本量和实验时长，快速实现产品迭代；实时性更强，更具有解释下。</p>
 <p>总结起来，频率学派将参数视为固定但未知的常数，侧重于点估计和置信区间；而贝叶斯学派将参数视为随机变量，具有概率分布，侧重于概率分布的更新与推断。不同学派的方法在实践中有各自的应用场景和优劣势，研究者和实践者可以根据问题的性质和需求来选择适合的统计学方法。</p>
 <p><strong>费米问题</strong>: 按照逻辑思维去拆解复杂问题</p>
-<p><strong>指标异动</strong>： DAU下降如何分析
-1.核实数据真实性；2.各维度细致拆解；3.内部因素（分部门纠因）4.外部因素（环境影响）
-GMV = UV（独立访问数）<em>用户转换率（漏斗分析）</em>订单均价</p>
-<p><strong>指标体系搭建</strong>： 指标和维度区别与联系
-北极星指标（第一关键指标），虚荣指标（累计数量，只涨不跌）
-定义：多个相关指标的有机结合
-建立：根据业务特点和生命周期选择北极星，将其逐层拆解（流程/时间区域/公式），从上（战略）至下（KPI），从下至上（叶子指标向上汇总乘总体指标）</p>
 <p><strong>辛普森悖论</strong>:
 细分结果与整体结果相违背（量与质是不等价的） 原：男20点击1
 女100点击99，点击率 100/120； 现：男100点击6，女20点击20，点击率26/120；
 如何避免：斟酌个别分组的权重，以一定的系数去消除以分组资料基数差异所造成的影响，同时必需了解该情境是否存在其他潜在要因而综合考虑。</p>
+<p><strong>指标体系搭建</strong>： 指标和维度区别与联系
+北极星指标（第一关键指标），虚荣指标（累计数量，只涨不跌）
+定义：多个相关指标的有机结合
+建立：根据业务特点和生命周期选择北极星，将其逐层拆解（流程/时间区域/公式），从上（战略）至下（KPI），从下至上（叶子指标向上汇总乘总体指标）</p>
+<p><strong>指标异动分析</strong>： DAU下降如何分析
+1.核实数据真实性；2.各维度细致拆解；3.内部因素（分部门纠因）4.外部因素（环境影响）
+GMV = UV（独立访问数）<em>用户转换率（漏斗分析）</em>订单均价
+1.核实数据真实性（数据库异常/数据上报延迟/提数SQL错误/数据统计口径不一致）以及分析的必要性
+（偶发性/周期性/趋势性）
+2.各维度细致拆解（用户新老，用户来源渠道，登录入口，使用的机型，用户基本画像）
+3.内部因素（分部门纠因，运营（推广，拉新），产品（策略调整，UI设计），研发（Bug））
+4.外部因素（政治、经济、社会、技术） GMV =
+UV（独立访问数）<em>用户转换率（漏斗分析）</em>订单均价 竞品分析维度：
+logo, slogan/进入app后的使用差异/用户构成差异/未来发展方向
+量化要求：搭建模型/选指标进行拆解</p>
+<p><strong>小红书Case</strong></p>
+<p>核心数据评估指标：</p>
+<p>整体的曝光和阅读效果：曝光量（笔记发布累计的曝光），阅读量（累计的阅读）
+笔记外在吸引力：点击率（阅读量/曝光量） 取决于标题和首页
+笔记投放性价比，单价越低，性价比越高：阅读单价（（博主报价+平台服务费）/全流量阅读量）
+如何评价指标好坏：与博主主页阅读数的中位数对比，与同类别的笔记做对比，与其他同赛道的笔记做对比</p>
+<p>搜索指标：</p>
+<p>流量类指标：搜索DAU，搜索时长，搜索次数，搜索页面浏览量，搜索UV
+留存率，新老用户比例（新用户靠拉新，旧用户靠留存）
+分析维度：行业分析，搜索类型（主动，推荐，历史），渠道，地区，年龄，时段，登陆状态
+流量诊断分析：博主是否适配，笔记标题和封面</p>
+<p>流量优化：</p>
+<p>数据（健康等级，成长性（涨粉数），粉丝数，流量评估（阅读中位数），互动评估（图文和视频），成本评估（阅读单价），内容表现评估（视频完播率））
+产品（品类，成分，品牌），场景（使用场景，垂类），内容
+流量趋势分析：广告流量，自然流量，内容加热</p>
+<p>短视频： 用户数据指标：</p>
+<p>日新增用户，活跃率，留存率 行为数据指标：
+播荐率，UV，转发率，转化率，K因子 产品数据指标：
+✓总量：成交数量，成交总额，访问时长
+✓人均：人均付费（ARPU/客单价），人均访问时长 ✓付费：付费率，复购率
+✓产品：热销产品，好评产品，差评产品等 付费推广指标：
+✓展示位：按展示次数收费 ✓搜索广告：按点击次数付费 ✓信息流广告：</p>
 <p>Updating In Progress...</p>
 </article></div></main><div class="nav-wrap"><div class="nav"><button class="site-nav"><div class="navicon"></div></button><ul class="nav_items"><li class="nav_item"><a class="nav-page" href="/About/"> About</a></li><li class="nav_item"><a class="nav-page" href="/Digital%20Transformation/"> Digital Transformation</a></li><li class="nav_item"><a class="nav-page" href="/Statistics/"> Statistics</a></li><li class="nav_item"><a class="nav-page" href="/XMind/"> XMind</a></li><li class="nav_item"><a class="nav-page" href="/JustBlog/"> JustBlog</a></li><li class="nav_item"><a class="nav-page" href="/Gallery/"> Gallery</a></li></ul></div><div class="cd-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></div></div><footer id="page_footer"><div class="footer_wrap"><div class="copyright">&copy;2020 - 2024 by Chuizixiaoxing</div><div class="theme-info">Powered by <a target="_blank" href="https://hexo.io" rel="nofollow noopener">Hexo</a> & <a target="_blank" href="https://github.com/PhosphorW/hexo-theme-academia" rel="nofollow noopener">Academia Theme</a></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery-pjax@latest/jquery.pjax.min.js"></script><script src="/js/main.js"></script></body></html>
